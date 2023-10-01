@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: calf-backend
+  namespace: argocd
+spec:
+  project: calf-raiser
+  source:
+    path: base/calf-backend
+    helm:
+      valueFiles:
+        - /staging/calf-backend/values.yaml
+    repoURL: https://github.com/KostyalBalint/anton-apps.git
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: calf-raiser
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
