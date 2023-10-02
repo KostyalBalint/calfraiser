@@ -1,4 +1,4 @@
-# Stallprofi borjúnevelő konfigurátor üzemeltetési dokumentáció
+# Stallprofi borjúnevelő konfigurátor telepítési dokumentáció
 
 
 A `helm` mappában találhatóak az általam használt helm chart-ok a telepítéshez.
